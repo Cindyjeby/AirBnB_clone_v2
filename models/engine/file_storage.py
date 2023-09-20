@@ -7,7 +7,7 @@ from importlib import import_module
 class FileStorage:
     """This class manages storage of hbnb models in JSON format"""
     __file_path = 'file.json'
-    __objects ={}
+    __objects = {}
 
     def __init__(self):
         """Initializes a file storage instance"""
@@ -15,7 +15,8 @@ class FileStorage:
             'BaseModel': import_module('models.base_model').BaseModel,
             'User': import_module('models.user').User,
             'State': import_module('models.state').State,
-            'City': import_module('models.amenity').Amenity,
+            'City': import_module('models.city').City,
+            'Amenity': import_module('models.amenity').Amenity,
             'Place': import_module('models.place').Place,
             'Review': import_module('models.review').Review
         }
@@ -29,7 +30,7 @@ class FileStorage:
             for key, value in self.__objects.items():
                 if type(value) is cls:
                     filtered_dict[key] = value
-                    return filtered_dict
+            return filtered_dict
                 
     def delete(self, obj=None):
         """Removes an object from the storagee dictionary"""
