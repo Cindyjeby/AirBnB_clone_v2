@@ -40,7 +40,7 @@ class FileStorage:
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
-        self.all().update(
+        self.__objects.update(
             {obj.to_dict()['__class__'] + '.' + obj.id: obj}
         )
 
@@ -48,8 +48,8 @@ class FileStorage:
         """Saves storage dictionary to file"""
         with open(self.__file_path, 'w') as file:
             temp = {}
-            for key, val in self.__objects.items():
-                temp[key] = val.to_dict()
+            for key, value in self.__objects.items():
+                temp[key] = value.to_dict()
             json.dump(temp, file)
 
     def reload(self):
@@ -64,4 +64,4 @@ class FileStorage:
     
     def close(self):
         """closes the storage engine"""
-        self.reaload()
+        self.reload()
