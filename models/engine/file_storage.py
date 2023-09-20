@@ -2,20 +2,23 @@
 """This module defines a class to manage file storage for hbnb clone"""
 import json
 import os
-import shlex
 from importlib import import_module
-from models.base_model import BaseModel
-from models.user import User
-from models.state import State
-from models.city import City
-from models.amenity import Amenity
-from models.place import Place
-from models.review import Review
 
 class FileStorage:
     """This class manages storage of hbnb models in JSON format"""
     __file_path = 'file.json'
     __objects ={}
+
+    def __init__(self):
+        """Initializes a file storage instance"""
+        self.model_classes = {
+            'BaseModel': import_module('models.base_model').BaseModel,
+            'User': import_module('models.user').User,
+            'State': import_module('models.state').State,
+            'City': import_module('models.amenity').Amenity,
+            'Place': import_module('models.place').Place,
+            'Review': import_module('models.review').Review
+        }
 
     def all(self, cls=None):
         """Returns a dictionary of models currently in storage"""
@@ -26,8 +29,8 @@ class FileStorage:
             for key, value in self.__objects.items():
                 if type(value) is cls:
                     filtered_dict[key] = value
-            return filtered_dict
-    
+                    return filtered_dict
+                
     def delete(self, obj=None):
         """Removes an object from the storagee dictionary"""
         if obj is not None:
