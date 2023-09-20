@@ -49,8 +49,8 @@ class FileStorage:
         """Saves storage dictionary to file"""
         with open(self.__file_path, 'w') as file:
             temp = {}
-            for key, value in self.__objects.items():
-                temp[key] = value.to_dict()
+            for key, val in self.__objects.items():
+                temp[key] = val.to_dict()
             json.dump(temp, file)
 
     def reload(self):
@@ -60,8 +60,8 @@ class FileStorage:
             temp = {}
             with open(self.__file_path, 'r') as file:
                 temp = json.load(file)
-                for key, value in temp.items():
-                    self.all()[key] = classes[value['__class__']](**value)
+                for key, val in temp.items():
+                    self.all()[key] = classes[val['__class__']](**val)
     
     def close(self):
         """closes the storage engine"""
