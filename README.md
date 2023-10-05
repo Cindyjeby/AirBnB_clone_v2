@@ -140,3 +140,25 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 (hbnb) ["[User] (98bea5de-9cb0-4d78-8a9d-c4de03521c30) {'updated_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134362), 'name': 'Fred the Frog', 'age': 9, 'id': '98bea5de-9cb0-4d78-8a9d-c4de03521c30', 'created_at': datetime.datetime(2020, 2, 19, 21, 47, 29, 134343)}"]
 ```
 <br>
+
+##FABRIC
+This is a python library used for interacting with SSH and computer systems to automate a wide range of tasks varying from application deployment to general system administartion
+
+###Fabric operations
+1. run - used for executing a shell command on one or more remote hosts
+       - if command succeeded or failed can be checked using.failed and .succeeded
+2. sudo - allows the execution of a given setof commands and arguments with sudo privileges on the remote host.
+        - eg: sudo("mkdir /var/www/web-app-one", user="web-admin") in this line of code mkdir creates the directory web-app-one in /var/www, and user specifies the user caccount under which the sudo command should be executed.
+3. local - this command run commands locally
+4. get - command exixts to download(i.e pull) files from the remote system to the computer where the fabric is being used.
+5. put - used when you need to upload a file
+6. prompt - command asks  the user to input a certain data to use during the successive execution
+7. reboot - used to reboot the remote system
+
+###Fabric context managers
+-> they are used with the pythons's with statement
+1. cd - allows keeping the directory state( opens the directory where a command is executed)
+2. lcd - (local cd) works the same as cd but only affects local system state
+3. path - alters the PATH variable
+4. settings - you can temporarily override env values
+5. prefix - does exactly what the name suggests
