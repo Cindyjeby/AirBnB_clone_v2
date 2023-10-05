@@ -141,10 +141,10 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 ```
 <br>
 
-##FABRIC
+<h2>FABRIC</h2>
 This is a python library used for interacting with SSH and computer systems to automate a wide range of tasks varying from application deployment to general system administartion
 
-###Fabric operations
+<h3>Fabric operations</h3>
 1. run - used for executing a shell command on one or more remote hosts
        - if command succeeded or failed can be checked using.failed and .succeeded
 2. sudo - allows the execution of a given setof commands and arguments with sudo privileges on the remote host.
@@ -155,7 +155,7 @@ This is a python library used for interacting with SSH and computer systems to a
 6. prompt - command asks  the user to input a certain data to use during the successive execution
 7. reboot - used to reboot the remote system
 
-###Fabric context managers
+<h3>Fabric context managers</h3>
 -> they are used with the pythons's with statement
 1. cd - allows keeping the directory state( opens the directory where a command is executed)
 2. lcd - (local cd) works the same as cd but only affects local system state
