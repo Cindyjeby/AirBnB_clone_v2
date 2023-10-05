@@ -145,20 +145,20 @@ Usage: <class_name>.update(<_id>, <dictionary>)
 This is a python library used for interacting with SSH and computer systems to automate a wide range of tasks varying from application deployment to general system administartion
 
 <h3>Fabric operations</h3>
-1. run - used for executing a shell command on one or more remote hosts
-       - if command succeeded or failed can be checked using.failed and .succeeded
-2. sudo - allows the execution of a given setof commands and arguments with sudo privileges on the remote host.
-        - eg: sudo("mkdir /var/www/web-app-one", user="web-admin") in this line of code mkdir creates the directory web-app-one in /var/www, and user specifies the user caccount under which the sudo command should be executed.
-3. local - this command run commands locally
-4. get - command exixts to download(i.e pull) files from the remote system to the computer where the fabric is being used.
-5. put - used when you need to upload a file
-6. prompt - command asks  the user to input a certain data to use during the successive execution
-7. reboot - used to reboot the remote system
+1. run - used for executing a shell command on one or more remote hosts<br>
+       - if command succeeded or failed can be checked using.failed and .succeeded<br>
+2. sudo - allows the execution of a given setof commands and arguments with sudo privileges on the remote host.<br>
+        - eg: sudo("mkdir /var/www/web-app-one", user="web-admin") in this line of code mkdir creates the directory web-app-one in /var/www, and user specifies the user caccount under which the sudo command should be executed.<br>
+3. local - this command run commands locally<br>
+4. get - command exixts to download(i.e pull) files from the remote system to the computer where the fabric is being used.<br>
+5. put - used when you need to upload a file<br>
+6. prompt - command asks  the user to input a certain data to use during the successive execution<br>
+7. reboot - used to reboot the remote system<br>
 
 <h3>Fabric context managers</h3>
--> they are used with the pythons's with statement
-1. cd - allows keeping the directory state( opens the directory where a command is executed)
-2. lcd - (local cd) works the same as cd but only affects local system state
-3. path - alters the PATH variable
-4. settings - you can temporarily override env values
-5. prefix - does exactly what the name suggests
+-> they are used with the pythons's with statement<br>
+1. cd - allows keeping the directory state( opens the directory where a command is executed)<br>
+2. lcd - (local cd) works the same as cd but only affects local system state<br>
+3. path - alters the PATH variable<br>
+4. settings - you can temporarily override env values<br>
+5. prefix - does exactly what the name suggests<br>
